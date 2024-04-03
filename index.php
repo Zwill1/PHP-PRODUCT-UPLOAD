@@ -7,16 +7,33 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <p>Starting template</p>
-    <button type="button" class="btn btn-primary">Primary</button>
-    <button type="button" class="btn btn-secondary">Secondary</button>
-    <button type="button" class="btn btn-success">Success</button>
-    <button type="button" class="btn btn-danger">Danger</button>
-    <button type="button" class="btn btn-warning">Warning</button>
-    <button type="button" class="btn btn-info">Info</button>
-    <button type="button" class="btn btn-light">Light</button>
-    <button type="button" class="btn btn-dark">Dark</button>
-
-    <button type="button" class="btn btn-link">Link</button>
+    <div class="container">
+        <form method="POST" action="">
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="text" placeholder="Product Name" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Product Price" aria-label="Product Price">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Product Quantity" aria-label="Product Quantity">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Product Image Link" aria-label="Product Image">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <textarea class="form-control" placeholder="Product Description" rows="3"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
