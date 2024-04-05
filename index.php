@@ -1,14 +1,6 @@
 <?php include "db/dbcon.php" ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
+<?php include "assets/header.php" ?>
+    <section>
         <form method="POST" action="">
             <div class="row mb-3">
                 <div class="col">
@@ -35,51 +27,48 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+    </section>
 
-
-        <!-- Displaying the data in a row on home page -->
-        <section>
+    <!-- Displaying the data in a row on home page -->
+    <section>
         <table class="table">
-        <thead>
-            <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Product Name</th>
-            <th scope="col">Price</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Product Image</th>
-            <th scope="col">Product Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php 
-            
-            $query = "SELECT * FROM products";
+            <thead>
+                <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Product Image</th>
+                <th scope="col">Product Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                
+                $query = "SELECT * FROM products";
 
-            $result = mysqli_query($connection, $query);
+                $result = mysqli_query($connection, $query);
 
-            if(!$result){
-                die("Query failed" . mysqli_error($connection));
-            }
-            else {
-                // print_r($result);
-                while($row = mysqli_fetch_assoc($result)){
-                    ?>
-                    <tr>
-                        <th scope="row"><?php echo $row['prodid']; ?></th>
-                        <td><?php echo $row['prodname']; ?></td>
-                        <td>$<?php echo $row['prodprice']; ?></td>
-                        <td><?php echo $row['prodquantity']; ?></td>
-                        <td><img src="<?php echo $row['prodimage']; ?>" style="width: 50px;" /></td>
-                        <td><?php echo $row['proddescription']; ?></td>
-                    </tr>
-                    <?php
+                if(!$result){
+                    die("Query failed" . mysqli_error($connection));
                 }
-            }           
-            ?>
-        </tbody>
+                else {
+                    // print_r($result);
+                    while($row = mysqli_fetch_assoc($result)){
+                        ?>
+                        <tr>
+                            <th scope="row"><?php echo $row['prodid']; ?></th>
+                            <td><?php echo $row['prodname']; ?></td>
+                            <td>$<?php echo $row['prodprice']; ?></td>
+                            <td><?php echo $row['prodquantity']; ?></td>
+                            <td><img src="<?php echo $row['prodimage']; ?>" style="width: 50px;" /></td>
+                            <td><?php echo $row['proddescription']; ?></td>
+                        </tr>
+                        <?php
+                    }
+                }           
+                ?>
+            </tbody>
         </table>
-        </section>
-    </div>
-
-</body>
-</html>
+    </section>
+<?php include "assets/footer.php" ?>
