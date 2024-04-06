@@ -3,7 +3,7 @@
     <section class="mt-5 mb-2">
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product</button>
     </section>
-    <section class="mb-5">
+    <!-- <section class="mb-5">
         <form method="POST" action="">
             <div class="row mb-3">
                 <div class="col">
@@ -30,7 +30,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-    </section>
+    </section> -->
 
     <!-- Displaying the data in a row on home page -->
     <section>
@@ -73,11 +73,27 @@
                 ?>
             </tbody>
         </table>
+
+        <?php 
+        
+        if(isset($_GET['message'])){
+            echo "<h6 class='text-center'>".$_GET['message']."</h6>";
+        }
+        
+        ?>
+
+        <?php 
+        
+        if(isset($_GET['insert_msg'])){
+            echo "<h6 class='text-center'>".$_GET['insert_msg']."</h6>";
+        }
+        
+        ?>
     </section>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <form action="" method="">
+            <form action="db/create_product.php" method="POST">
                 <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Add A New Product</h5>
@@ -111,7 +127,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-success" name="" value="Add" />
+                    <input type="submit" class="btn btn-success" name="create_product" value="Add" />
                 </div>
                 </div>
             </form>
