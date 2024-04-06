@@ -1,7 +1,23 @@
 <?php include "db/dbcon.php" ?>
 <?php include "assets/header.php" ?>
+
+    <!-- display success when inserting is done correctly -->
+    <?php        
+        if(isset($_GET['insert_msg'])){
+            echo 
+            "<section class='container-fluid p-0'>
+                <div class='bg-success p-2'>
+                    <div class='container text-white text-center fw-bold'>
+                        <h6 class='text-center'>".$_GET['insert_msg']."</h6>
+                    </div>
+                </div>
+            </section>";
+        }       
+    ?>
+
+<div class="container">
     <section class="mt-5 mb-2">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product</button>
+        <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product</button>
     </section>
     <!-- <section class="mb-5">
         <form method="POST" action="">
@@ -34,6 +50,16 @@
 
     <!-- Displaying the data in a row on home page -->
     <section>
+    <?php        
+        if(isset($_GET['message'])){
+            echo "<h6 class='text-center'>".$_GET['message']."</h6>";
+        }        
+        ?>
+        <?php         
+        if(isset($_GET['delete_msg'])){
+            echo "<h6 class='text-center'>".$_GET['delete_msg']."</h6>";
+        }        
+        ?>
         <table class="table">
             <thead>
                 <tr>
@@ -78,23 +104,6 @@
             </tbody>
         </table>
 
-        <?php        
-        if(isset($_GET['message'])){
-            echo "<h6 class='text-center'>".$_GET['message']."</h6>";
-        }        
-        ?>
-
-        <?php        
-        if(isset($_GET['insert_msg'])){
-            echo "<h6 class='text-center'>".$_GET['insert_msg']."</h6>";
-        }       
-        ?>
-
-        <?php         
-        if(isset($_GET['delete_msg'])){
-            echo "<h6 class='text-center'>".$_GET['delete_msg']."</h6>";
-        }        
-        ?>
     </section>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
