@@ -43,6 +43,8 @@
                 <th scope="col">Quantity</th>
                 <th scope="col">Product Image</th>
                 <th scope="col">Product Description</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,6 +68,8 @@
                             <td><?php echo $row['prodquantity']; ?></td>
                             <td><img src="<?php echo $row['prodimage']; ?>" style="width: 50px;" /></td>
                             <td><?php echo $row['proddescription']; ?></td>
+                            <td><a href="db/edit_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-warning">Edit</a></td>
+                            <td><a href="db/delete_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-danger">Delete</a></td>
                         </tr>
                         <?php
                     }
@@ -74,20 +78,22 @@
             </tbody>
         </table>
 
-        <?php 
-        
+        <?php        
         if(isset($_GET['message'])){
             echo "<h6 class='text-center'>".$_GET['message']."</h6>";
-        }
-        
+        }        
         ?>
 
-        <?php 
-        
+        <?php        
         if(isset($_GET['insert_msg'])){
             echo "<h6 class='text-center'>".$_GET['insert_msg']."</h6>";
-        }
-        
+        }       
+        ?>
+
+        <?php         
+        if(isset($_GET['delete_msg'])){
+            echo "<h6 class='text-center'>".$_GET['delete_msg']."</h6>";
+        }        
         ?>
     </section>
     <!-- Modal -->
