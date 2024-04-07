@@ -29,48 +29,29 @@
         }       
     ?>
 
-<div class="container">
-    <section class="mt-5 mb-2">
-        <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product</button>
-    </section>
-    <!-- <section class="mb-5">
-        <form method="POST" action="">
-            <div class="row mb-3">
-                <div class="col">
-                    <input type="text" placeholder="Product Name" class="form-control">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Product Price" aria-label="Product Price">
-                </div>
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Product Quantity" aria-label="Product Quantity">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <input type="text" class="form-control" placeholder="Product Image Link" aria-label="Product Image">
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col">
-                    <textarea class="form-control" placeholder="Product Description" rows="3"></textarea>
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </section> -->
-
-    <!-- Displaying the data in a row on home page -->
-    <section>
+    <!-- display message when validating new product is done incorrectly -->
     <?php        
         if(isset($_GET['message'])){
-            echo "<h6 class='text-center'>".$_GET['message']."</h6>";
-        }        
-        ?>
+            echo 
+            "<section class='container-fluid p-0'>
+                <div class='bg-danger p-2'>
+                    <div class='container text-white text-center fw-bold'>
+                        <h6 class='text-center'>".$_GET['message']."</h6>
+                    </div>
+                </div>
+            </section>";
+        }       
+    ?>
 
-        <table class="table">
+<div class="container">
+    <section class="mt-5 mb-2">
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product</button>
+    </section>
+
+    <!-- Displaying the data in a row on home page -->
+    <section class="table-responsive">
+
+        <table class="table table-bordered table-hover">
             <thead>
                 <tr>
                 <th scope="col">ID</th>
@@ -95,7 +76,6 @@
                     die("Query failed" . mysqli_error($connection));
                 }
                 else {
-                    // print_r($result);
                     while($row = mysqli_fetch_assoc($result)){
                         ?>
                         <tr>
@@ -160,4 +140,5 @@
             </form>
         </div>
         </div>
+        
 <?php include "assets/footer.php" ?>
