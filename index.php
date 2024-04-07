@@ -15,6 +15,20 @@
         }       
     ?>
 
+    <!-- display success when deleting a product is done correctly -->
+    <?php        
+        if(isset($_GET['delete_msg'])){
+            echo 
+            "<section class='container-fluid p-0'>
+                <div class='bg-success p-2'>
+                    <div class='container text-white text-center fw-bold'>
+                        <h6 class='text-center'>".$_GET['delete_msg']."</h6>
+                    </div>
+                </div>
+            </section>";
+        }       
+    ?>
+
 <div class="container">
     <section class="mt-5 mb-2">
         <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product</button>
@@ -55,11 +69,7 @@
             echo "<h6 class='text-center'>".$_GET['message']."</h6>";
         }        
         ?>
-        <?php         
-        if(isset($_GET['delete_msg'])){
-            echo "<h6 class='text-center'>".$_GET['delete_msg']."</h6>";
-        }        
-        ?>
+
         <table class="table">
             <thead>
                 <tr>
@@ -69,6 +79,7 @@
                 <th scope="col">Quantity</th>
                 <th scope="col">Product Image</th>
                 <th scope="col">Product Description</th>
+                <th scope="col">Info</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
                 </tr>
@@ -94,6 +105,7 @@
                             <td><?php echo $row['prodquantity']; ?></td>
                             <td><img src="<?php echo $row['prodimage']; ?>" style="width: 50px;" /></td>
                             <td><?php echo $row['proddescription']; ?></td>
+                            <td><a href="db/product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-info">More Info</a></td>
                             <td><a href="db/edit_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-warning">Edit</a></td>
                             <td><a href="db/delete_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-danger">Delete</a></td>
                         </tr>

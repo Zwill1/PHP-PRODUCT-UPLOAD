@@ -13,7 +13,7 @@ if(isset($_GET['id'])){
     if(!$result){
         die("Query Failed".mysqli_error($connection));
     }else{
-        header("location:../index.php?delete_msg=Your data has been deleted to the database.");
+        header("location:../index.php?delete_msg=The product has been deleted to the database.");
     }
 
 ?>

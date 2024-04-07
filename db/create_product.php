@@ -35,7 +35,7 @@ if(isset($_POST["create_product"])){
             die("Query Failed".mysqli_error($connection));
         }else{
             // Redirects to index page with row data
-            header("location:../index.php?insert_msg=Your data has been added to the database.");
+            header("location:../index.php?insert_msg=The product has been added to the database.");
         }
     }
 
