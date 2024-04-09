@@ -30,7 +30,7 @@
             <div class="col-8">
                 <h1 class="fw-bold"><?php echo $row['prodname']; ?></h1>
                 <p>$<?php echo $row['prodprice'] ?></p>
-                <p><?php echo $row['prodquantity'] ?></p>
+                <p>Quantity remaining: <?php echo $row['prodquantity'] ?></p>
                 <p><?php echo $row['proddescription'] ?></p>
             </div>
         </div>

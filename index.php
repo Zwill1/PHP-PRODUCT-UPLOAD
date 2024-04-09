@@ -48,8 +48,43 @@
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product</button>
     </section>
 
+    <section class="row">
+
+    <?php 
+                
+                $query = "SELECT * FROM products";
+
+                $result = mysqli_query($connection, $query);
+
+                if(!$result){
+                    die("Query failed" . mysqli_error($connection));
+                }
+                else {
+                    while($row = mysqli_fetch_assoc($result)){
+                        ?>
+                            <div class="col-3">
+                                <div class="card" id="product-<?php echo $row['prodid']; ?>">
+                                    <img src="<?php echo $row['prodimage']; ?>" class="card-img-top" alt="<?php echo $row['prodname']; ?>">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo $row['prodname']; ?></h5>
+                                        <p class="card-text">$<?php echo $row['prodprice']; ?></p>
+                                        <p class="card-text">Quantity remaining: <?php echo $row['prodquantity']; ?></p>
+                                        <p class="card-text"><?php echo $row['proddescription']; ?></p>
+                                        <a href="db/product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-info">More Info</a>
+                                        <a href="db/edit_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-warning">Edit</a>
+                                        <a href="db/delete_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-danger">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php
+                    }
+                }           
+    ?>
+
+    </section>
+
     <!-- Displaying the data in a row on home page -->
-    <section class="table-responsive">
+    <!-- <section class="table-responsive">
 
         <table class="table table-bordered table-hover">
             <thead>
@@ -96,7 +131,7 @@
             </tbody>
         </table>
 
-    </section>
+    </section> -->
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
