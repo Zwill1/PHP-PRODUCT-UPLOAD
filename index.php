@@ -63,18 +63,22 @@
                     while($row = mysqli_fetch_assoc($result)){
                         ?>
                             <div class="col-3">
-                                <div class="card" id="product-<?php echo $row['prodid']; ?>">
-                                    <img src="<?php echo $row['prodimage']; ?>" class="card-img-top" alt="<?php echo $row['prodname']; ?>">
-                                    <div class="card-body">
-                                        <h5 class="card-title"><?php echo $row['prodname']; ?></h5>
-                                        <p class="card-text">$<?php echo $row['prodprice']; ?></p>
-                                        <p class="card-text">Quantity remaining: <?php echo $row['prodquantity']; ?></p>
-                                        <p class="card-text"><?php echo $row['proddescription']; ?></p>
-                                        <a href="db/product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-info">More Info</a>
-                                        <a href="db/edit_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-warning">Edit</a>
-                                        <a href="db/delete_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-danger">Delete</a>
+                                <a href="db/product.php?id=<?php echo $row['prodid']; ?>" class="text-decoration-none text-reset">
+                                    <div class="card p-2 rounded-0" id="product-<?php echo $row['prodid']; ?>">
+                                        <img src="<?php echo $row['prodimage']; ?>" class="card-img-top" alt="<?php echo $row['prodname']; ?>" style="width: 150px; margin-left: auto; margin-right: auto;">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold mb-1"><?php echo $row['prodname']; ?></h5>
+                                            <p class="card-text mb-1 fw-bold">$<?php echo $row['prodprice']; ?></p>
+                                            <p class="card-text mb-2"><span class="fw-bold">Quantity:</span> <?php echo $row['prodquantity']; ?></p>
+                                            <!-- <p class="card-text"><?php echo $row['proddescription']; ?></p> -->
+                                            <div>
+                                                <a href="db/product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-info">Details</a>
+                                                <a href="db/edit_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-warning">Edit</a>
+                                                <a href="db/delete_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-danger">Delete</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
                         <?php
                     }
