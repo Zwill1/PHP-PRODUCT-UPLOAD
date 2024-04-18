@@ -29,13 +29,13 @@
             </div>
             <div class="col-8">
                 <h1 class="fw-bold"><?php echo $row['prodname']; ?></h1>
-                <p>Brand: -- Brand --</p>
-                <div class="d-flex justify-content-start" style="background-color: red;">
-                        <p>--rating-- --star rating--</p>
-                        <p>--total rating bumber-- ratings</p>
+                <p><span class="fw-bold">Brand:</span> -- Brand --</p>
+                <div class="d-flex justify-content-start">
+                        <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+                        <p class="ms-3"><?php echo $row['prodreviewcount'] ?> ratings</p>
                 </div>
-                <p>$<?php echo $row['prodprice'] ?></p>
-                <p>Quantity remaining: <?php echo $row['prodquantity'] ?></p>
+                <p class="fw-semibold fs-2">$<?php echo $row['prodprice'] ?></p>
+                <p>Stock left: <?php echo $row['prodquantity'] ?></p>
                 <p><?php echo $row['proddescription'] ?></p>
             </div>
         </div>
