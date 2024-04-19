@@ -29,7 +29,7 @@
             </div>
             <div class="col-8">
                 <h1 class="fw-bold"><?php echo $row['prodname']; ?></h1>
-                <p><span class="fw-bold">Brand:</span> -- Brand --</p>
+                <p><span class="fw-bold">Brand:</span> <?php echo $row['prodbrand'] ?></p>
                 <div class="d-flex justify-content-start">
                         <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
                         <p class="ms-3"><?php echo $row['prodreviewcount'] ?> ratings</p>
