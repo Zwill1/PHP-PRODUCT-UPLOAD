@@ -15,6 +15,20 @@
         }       
     ?>
 
+    <!-- display success when editing is done correctly -->
+    <?php        
+        if(isset($_GET['update_msg'])){
+            echo 
+            "<section class='container-fluid p-0'>
+                <div class='bg-success p-2'>
+                    <div class='container text-white text-center fw-bold'>
+                        <h6 class='text-center'>".$_GET['update_msg']."</h6>
+                    </div>
+                </div>
+            </section>";
+        }       
+    ?>
+
     <!-- display success when deleting a product is done correctly -->
     <?php        
         if(isset($_GET['delete_msg'])){
@@ -148,6 +162,10 @@
                     <div class="form-group">
                         <label for="exampleInputFistName">Product Name</label>
                         <input type="text" class="form-control" id="exampleInputFistName" name="pname" aria-describedby="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFistName">Product Brand</label>
+                        <input type="text" class="form-control" id="exampleInputFistName" name="pbrand" aria-describedby="First Name">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputLastName">Product Price</label>

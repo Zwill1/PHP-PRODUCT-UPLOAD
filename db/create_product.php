@@ -5,6 +5,7 @@
 // Checks the POST method from INPUT button to pass info to SQL query.
 if(isset($_POST["create_product"])){
     $pname = $_POST["pname"];
+    $pbrand = $_POST["pbrand"];
     $pprice = $_POST["pprice"];
     $pquantity = $_POST["pquantity"];
     $pimage = $_POST["pimage"];
@@ -13,6 +14,9 @@ if(isset($_POST["create_product"])){
     // Checks to see if name is empty as a STRING or NULL - NOT WORKING AS INTENDED JUST YET
     if($pname == "" || empty($pname)){
         header("location:../index.php?message=You need fill in the product name");
+    }
+    if($pbrand == "" || empty($pname)){
+        header("location:../index.php?message=You need fill in the product brand");
     }
     if($pprice == "" || empty($pprice)){
         header("location:../index.php?message=You need fill in the product price");
@@ -27,7 +31,7 @@ if(isset($_POST["create_product"])){
         header("location:../index.php?message=You need fill in the product description");
     } 
     else {
-        $query = "insert into `products` (`prodname`,`prodprice`,`prodquantity`, `prodimage`, `proddescription`) values ('$pname', '$pprice', '$pquantity', '$pimage', '$pdescription')";
+        $query = "insert into `products` (`prodname`,`prodbrand`,`prodprice`,`prodquantity`, `prodimage`, `proddescription`) values ('$pname', '$pbrand', '$pprice', '$pquantity', '$pimage', '$pdescription')";
 
         $result = mysqli_query($connection, $query);
 

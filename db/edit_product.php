@@ -23,12 +23,13 @@
     if(isset($_POST['update_product'])){
 
         $pname = $_POST["pname"];
+        $pbrand = $_POST["pbrand"];
         $pprice = $_POST["pprice"];
         $pquantity = $_POST["pquantity"];
         $pimage = $_POST["pimage"];
         $pdescription = $_POST["pdescription"];
 
-        $query = "update `products` set `prodname` = '$pname', `prodprice` = '$pprice', `prodquantity` = '$pquantity', `prodimage` = '$pimage', `proddescription` = '$pdescription' where `prodid` = '$id'";
+        $query = "update `products` set `prodname` = '$pname', `prodbrand` = '$pbrand', `prodprice` = '$pprice', `prodquantity` = '$pquantity', `prodimage` = '$pimage', `proddescription` = '$pdescription' where `prodid` = '$id'";
 
         $result = mysqli_query($connection, $query);
 
@@ -36,7 +37,7 @@
             die("Query failed" . mysqli_error($connection));
         } 
         else {
-            header("location: ../index.php?update_msg=You have update this row data");
+            header("location: ../index.php?update_msg=The product has been updated.");
         }
     }
 
@@ -49,6 +50,10 @@
     <div class="form-group">
         <label for="exampleInputFistName">Product Name</label>
         <input type="text" class="form-control" id="exampleInputFistName" name="pname" value="<?php echo $row['prodname']?>">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputFistName">Product Brand</label>
+        <input type="text" class="form-control" id="exampleInputFistName" name="pbrand" value="<?php echo $row['prodbrand']?>">
     </div>
     <div class="form-group">
         <label for="exampleInputLastName">Product Price</label>
