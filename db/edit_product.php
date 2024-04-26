@@ -27,9 +27,10 @@
         $pprice = $_POST["pprice"];
         $pquantity = $_POST["pquantity"];
         $pimage = $_POST["pimage"];
-        $pdescription = $_POST["pdescription"];
+        $pshortdescription = $_POST["pshortdescription"];
+        $plongdescription = $_POST["plongdescription"];
 
-        $query = "update `products` set `prodname` = '$pname', `prodbrand` = '$pbrand', `prodprice` = '$pprice', `prodquantity` = '$pquantity', `prodimage` = '$pimage', `proddescription` = '$pdescription' where `prodid` = '$id'";
+        $query = "update `products` set `prodname` = '$pname', `prodbrand` = '$pbrand', `prodprice` = '$pprice', `prodquantity` = '$pquantity', `prodimage` = '$pimage', `prodshortdescription` = '$pshortdescription', `prodlongdescription` = '$plongdescription' where `prodid` = '$id'";
 
         $result = mysqli_query($connection, $query);
 
@@ -68,8 +69,12 @@
         <input type="text" class="form-control" id="exampleInputAge" name="pimage" value="<?php echo $row['prodimage']?>">
     </div>
     <div class="form-group">
-        <label for="exampleInputAge">Product Description</label>
-        <input type="text" class="form-control" id="exampleInputAge" name="pdescription" value="<?php echo $row['proddescription']?>">
+        <label for="exampleInputAge">Product Short Description</label>
+        <input type="text" class="form-control" id="exampleInputAge" name="pshortdescription" value="<?php echo $row['prodshortdescription']?>">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputAge">Product Long Description</label>
+        <textarea type="text" class="form-control" id="exampleInputAge" name="plongdescription"><?php echo $row['prodlongdescription']?></textarea> 
     </div>
     <div class="form-group mt-3">
         <input type="submit" class="btn btn-success" name="update_product" value="Update" />
