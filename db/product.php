@@ -74,7 +74,7 @@
 
                     <div class='col-2'>
                         <img src="<?php echo $row['prodimage']; ?>" class="card-img-top" alt="<?php echo $row['prodname']; ?>" style="width: 150px;">
-                        <h4 class="mb-1"><?php echo $row['prodname']?></h4>
+                        <h4 class="mb-1"><a href="product.php?id=<?php echo $row['prodid']; ?>" class="text-decoration-none text-reset fw-bold"><?php echo $row['prodname']?></a></h4>
                         <p class="">$<?php echo $row['prodprice']; ?></p>
                     </div>
 
