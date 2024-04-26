@@ -180,8 +180,12 @@
                         <input type="text" class="form-control" id="exampleInputAge" name="pimage">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputAge">Product Description</label>
-                        <input type="text" class="form-control" id="exampleInputAge" name="pdescription">
+                        <label for="exampleInputAge">Product Short Description</label>
+                        <input type="text" class="form-control" id="exampleInputAge" name="pshortdescription">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputAge">Product Long Description</label>
+                        <textarea type="text" class="form-control" id="exampleInputAge" name="plongdescription"></textarea> 
                     </div>
                 <!-- </form> -->
                 </div>

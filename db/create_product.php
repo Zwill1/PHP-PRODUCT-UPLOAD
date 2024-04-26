@@ -9,7 +9,8 @@ if(isset($_POST["create_product"])){
     $pprice = $_POST["pprice"];
     $pquantity = $_POST["pquantity"];
     $pimage = $_POST["pimage"];
-    $pdescription = $_POST["pdescription"];
+    $pshortdescription = $_POST["pshortdescription"];
+    $plongdescription = $_POST["plongdescription"];
 
     // Checks to see if name is empty as a STRING or NULL - NOT WORKING AS INTENDED JUST YET
     if($pname == "" || empty($pname)){
@@ -27,11 +28,14 @@ if(isset($_POST["create_product"])){
     if($pimage == "" || empty($pimage)){
         header("location:../index.php?message=You need fill in the product image link");
     } 
-    if($pdescription == "" || empty($pdescription)){
-        header("location:../index.php?message=You need fill in the product description");
+    if($pshortdescription == "" || empty($pshortdescription)){
+        header("location:../index.php?message=You need fill in the product short description");
+    } 
+    if($plongdescription == "" || empty($plongdescription)){
+        header("location:../index.php?message=You need fill in the product long description");
     } 
     else {
-        $query = "insert into `products` (`prodname`,`prodbrand`,`prodprice`,`prodquantity`, `prodimage`, `proddescription`) values ('$pname', '$pbrand', '$pprice', '$pquantity', '$pimage', '$pdescription')";
+        $query = "insert into `products` (`prodname`,`prodbrand`,`prodprice`,`prodquantity`, `prodimage`, `prodshortdescription`, `prodlongdescription`) values ('$pname', '$pbrand', '$pprice', '$pquantity', '$pimage', '$pshortdescription', '$plongdescription')";
 
         $result = mysqli_query($connection, $query);
 
