@@ -15,7 +15,16 @@
             <a class="nav-link active" aria-current="page" href="http://localhost/PHP-PRODUCT-UPLOAD/">About</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://localhost/PHP-PRODUCT-UPLOAD/">FAQ</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="http://localhost/PHP-PRODUCT-UPLOAD/">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://localhost/PHP-PRODUCT-UPLOAD/"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="http://localhost/PHP-PRODUCT-UPLOAD/"><i class="fa-solid fa-cart-shopping"></i></a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">Features</a>
