@@ -58,8 +58,13 @@
     ?>
 
 <div class="container">
-    <section class="mt-5 mb-2">
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product</button>
+    <section class="row mt-5 mb-2">
+        <h1 class="fw-bold text-center">Shop favorite products</h1>
+    </section>
+    <section class="row">
+        <div class="d-md-flex justify-content-md-end d-grid gap-2 d-md-block">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Product</button>
+        </div>
     </section>
 
     <section class="row">
@@ -76,13 +81,21 @@
                 else {
                     while($row = mysqli_fetch_assoc($result)){
                         ?>  
-                            <div class="col-3">
-                                <div class="card border-0 p-2 rounded-0" id="product-<?php echo $row['prodid']; ?>">
-                                    <img src="<?php echo $row['prodimage']; ?>" class="card-img-top" alt="<?php echo $row['prodname']; ?>" style="width: 150px;">
+                            <div class="col-3 p-2">
+                                <div class="card border-0 p-2 rounded-0 bg-body-secondary" id="product-<?php echo $row['prodid']; ?>">
+                                    <div class="d-flex justify-content-center">
+                                        <img src="<?php echo $row['prodimage']; ?>" class="card-img-top" alt="<?php echo $row['prodname']; ?>" style="width: 150px;">
+                                    </div>
                                     <div class="card-body">
-                                        <h5 class="card-title fw-bold mb-1"><?php echo $row['prodname']; ?></h5>
-                                        <p class="card-text mb-1 fw-bold">$<?php echo $row['prodprice']; ?></p>
-                                        <div>
+                                        <div class="text-center">
+                                            <h5 class="card-title mb-1"><?php echo $row['prodname']; ?></h5>
+                                            <p class="card-text mb-1 fw-bold">$<?php echo $row['prodprice']; ?></p>
+                                        </div>
+                                        <div class="d-flex justify-content-evenly">
+                                                <p>5 <span style="color:#ffa41c">&#9733;&#9733;&#9733;&#9733;&#9733;</span></p>
+                                                <p class="ms-3"><?php echo $row['prodreviewcount'] ?> ratings</p>
+                                        </div>
+                                        <div class="d-flex justify-content-evenly">
                                             <a href="db/product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-info">Details</a>
                                             <a href="db/edit_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-warning">Edit</a>
                                             <a href="db/delete_product.php?id=<?php echo $row['prodid']; ?>" class="btn btn-danger">Delete</a>
