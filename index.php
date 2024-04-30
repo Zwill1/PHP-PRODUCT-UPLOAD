@@ -59,7 +59,7 @@
 
 <div class="container">
     <section class="row mt-5 mb-2">
-        <h1 class="fw-bold text-center">Shop favorite products</h1>
+        <h1 class="fw-bold text-center">Shop Your Favorite Products</h1>
     </section>
     <section class="row">
         <div class="d-md-flex justify-content-md-end d-grid gap-2 d-md-block">
@@ -81,8 +81,8 @@
                 else {
                     while($row = mysqli_fetch_assoc($result)){
                         ?>  
-                            <div class="col-3 p-2">
-                                <div class="card border-0 p-2 rounded-0 bg-body-secondary" id="product-<?php echo $row['prodid']; ?>">
+                            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 p-2">
+                                <div class="card border-0 p-2 rounded-0 bg-body-secondary py-4" id="product-<?php echo $row['prodid']; ?>">
                                     <div class="d-flex justify-content-center">
                                         <img src="<?php echo $row['prodimage']; ?>" class="card-img-top" alt="<?php echo $row['prodname']; ?>" style="width: 150px;">
                                     </div>
@@ -209,6 +209,6 @@
                 </div>
             </form>
         </div>
-        </div>
+    </div>
         
 <?php include "assets/footer.php" ?>
