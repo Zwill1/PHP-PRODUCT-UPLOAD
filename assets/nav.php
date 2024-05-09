@@ -2,7 +2,9 @@
   <?php include 'top-header.php' ?>
   <nav class="navbar navbar-expand-lg bg-body-tertiary py-4">
     <div class="container">
-      <a class="navbar-brand fw-bold" href="http://localhost/PHP-PRODUCT-UPLOAD/">Product Upload</a>
+      <a class="navbar-brand fw-bold" href="http://localhost/PHP-PRODUCT-UPLOAD/">
+        <img src="http://localhost/PHP-PRODUCT-UPLOAD/assets/product-upload-logo.png" width="200px" alt="Product Upload logo" />
+      </a>
       <button class="navbar-toggler border border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
