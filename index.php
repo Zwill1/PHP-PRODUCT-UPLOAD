@@ -165,7 +165,7 @@
             <form action="db/create_product.php" method="POST">
                 <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add A New Product</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Add New Product</h5>
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                     </button>
@@ -189,11 +189,11 @@
                         <input type="text" class="form-control" id="exampleInputAge" name="pquantity">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputAge">Product Image Link</label>
+                        <label for="exampleInputAge">Product Image Link (Not File Upload)</label>
                         <input type="text" class="form-control" id="exampleInputAge" name="pimage">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputAge">Product Short Description</label>
+                        <label for="exampleInputAge">Product About Description (Short)</label>
                         <input type="text" class="form-control" id="exampleInputAge" name="pshortdescription">
                     </div>
                     <div class="form-group">
