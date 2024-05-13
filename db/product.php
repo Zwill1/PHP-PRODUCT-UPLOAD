@@ -24,7 +24,7 @@
 
     <div class="mt-5 mb-3">
         <div class="row">
-            <div class="col-sm-12 col-md-6 col-xl-4">
+            <div class="col-sm-12 col-md-6 col-xl-4 pb-5 text-center text-md-start">
                 <img src="<?php echo $row['prodimage'];  ?>" alt="<?php echo $row["prodname"]; ?>" style="width: 250px;" />
             </div>
             <div class="col-sm-12 col-md-6 col-xl-8">
