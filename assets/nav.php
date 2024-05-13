@@ -1,4 +1,9 @@
-<?php //echo $_SERVER['REQUEST_URI']; ?>
+<?php 
+$GLOBAL_URL = $_SERVER['REQUEST_URI'];
+?>
+<!-- Testing for global url pathname for active link class -->
+<?php //echo $GLOBAL_URL ?>
+<?php //print ($_SERVER['REQUEST_URI'] == $GLOBAL_URL) ? 'active' : '' ?>
 
 <div class="sticky-top">
   <?php include 'top-header.php' ?>
@@ -13,7 +18,7 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="http://localhost/PHP-PRODUCT-UPLOAD/">Home</a>
+            <a class="nav-link <?php echo ($_SERVER['REQUEST_URI'] == $GLOBAL_URL) ? 'active' : '' ?>" aria-current="page" href="http://localhost/PHP-PRODUCT-UPLOAD/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="#">About</a>
