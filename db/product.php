@@ -24,10 +24,10 @@
 
     <div class="mt-5 mb-3">
         <div class="row">
-            <div class="col-4">
+            <div class="col-sm-12 col-md-6 col-xl-4">
                 <img src="<?php echo $row['prodimage'];  ?>" alt="<?php echo $row["prodname"]; ?>" style="width: 250px;" />
             </div>
-            <div class="col-8">
+            <div class="col-sm-12 col-md-6 col-xl-8">
                 <h1 class="fw-bold"><?php echo $row['prodname']; ?></h1>
                 <p><span class="fw-bold">Brand:</span> <?php echo $row['prodbrand'] ?></p>
                 <div class="d-flex justify-content-start">
@@ -72,7 +72,7 @@
                     $row = mysqli_fetch_assoc($result);
                     ?>
 
-                    <div class='col-2'>
+                    <div class='col-sm-12 col-md-4 col-xl-2 p-2'>
                         <div class="bg-body-secondary text-center py-4 p-2">
                             <img src="<?php echo $row['prodimage']; ?>" class="card-img-top" alt="<?php echo $row['prodname']; ?>" style="width: 150px;">
                             <h4 class="mb-1"><a href="product.php?id=<?php echo $row['prodid']; ?>" class="text-decoration-none text-reset fs-6"><?php echo $row['prodname']?></a></h4>
